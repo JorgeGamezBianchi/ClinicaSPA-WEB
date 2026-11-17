@@ -1,0 +1,256 @@
+---
+const technologies = [
+  {
+    name: "Scarlet S",
+    category: "Radiofrecuencia Fraccionada con Microagujas",
+    description: "Tecnología de última generación patentada para rejuvenecimiento tridimensional. Sus microagujas entregan energía térmica directamente a la dermis sin dañar la superficie cutánea.",
+    highlight: "Estimulación masiva de colágeno y elastina",
+    tags: ["Efecto Tensor", "Cicatrices de Acné", "Sin Cirugía"],
+    icon: "M13 10V3L4 14h7v7l9-11h-7z"
+  },
+  {
+    name: "V10 de Viora",
+    category: "Radiofrecuencia Multifocal & Vacío",
+    description: "Plataforma multi-tecnológica respaldada por estudios clínicos internacionales para el tratamiento eficaz de la celulitis, moldeado corporal y retracción dérmica en zonas con flacidez.",
+    highlight: "Lipólisis celular y drenaje linfático simultáneo",
+    tags: ["Contorno Corporal", "Anti-Celulitis", "Indoloro"],
+    icon: "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5a1.5 1.5 0 1 1-3 0V11a1.5 1.5 0 0 1 3 0zm-1.5-8a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 11.5 8.5z"
+  },
+  {
+    name: "Láser Diodo Clinical",
+    category: "Fototermólisis Selectiva de Alta Potencia",
+    description: "Emisión de haz de luz concentrado a 808nm que viaja directamente a la raíz folicular. Su cabezal con enfriamiento termoeléctrico activo protege la piel en cada pulso.",
+    highlight: "Resultados duraderos y seguros para todo fototipo",
+    tags: ["Depilación Médica", "Piel Suave", "Cabezal Frío"],
+    icon: "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"
+  },
+  {
+    name: "Coolifting Gun",
+    category: "Crioterapia & Infusión de Alta Presión",
+    description: "La técnica de rejuvenecimiento flash más aclamada en clínicas estéticas europeas. Combina un chorro gélido de CO2 a alta presión con activos concentrados nebulizados.",
+    highlight: "Efecto lifting visible en solo 5 minutos",
+    tags: ["Efecto Flash", "Hidratación Profunda", "Sin Inyecciones"],
+    icon: "M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"
+  }
+];
+---
+
+<section class="section-padding tech-section" id="tecnologia">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag section-tag-gold">Seguridad & Aval Clínico</span>
+      <h2 class="section-title">Aparatología Médica Original de Vanguardia</h2>
+      <p class="section-subtitle">
+        En nuestra clínica no improvisamos: trabajamos únicamente con equipos originales certificados internacionalmente y protocolos estandarizados para garantizar resultados medibles sin poner en riesgo tu salud.
+      </p>
+    </div>
+
+    <div class="tech-grid">
+      {
+        technologies.map((tech) => (
+          <div class="tech-card card">
+            <div class="tech-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d={tech.icon} />
+              </svg>
+            </div>
+
+            <div class="tech-content">
+              <span class="tech-category">{tech.category}</span>
+              <h3 class="tech-name">{tech.name}</h3>
+              <p class="tech-desc">{tech.description}</p>
+
+              <div class="tech-highlight">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                <span>{tech.highlight}</span>
+              </div>
+
+              <div class="tech-tags">
+                {tech.tags.map((tag) => (
+                  <span class="tech-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Banner de Garantía Médica -->
+    <div class="safety-banner">
+      <div class="safety-icon">
+        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      </div>
+      <div class="safety-text">
+        <h4>Cumplimiento Estricto de Normas Sanitarias</h4>
+        <p>Todos nuestros insumos son desechables, estériles y de marcas dermatológicas reguladas. Cada tratamiento incluye valoración médica y seguimiento posprocedimiento.</p>
+      </div>
+      <a href="#contacto" class="btn btn-secondary btn-sm safety-btn">
+        Solicitar Valoración
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-section {
+    background: var(--color-bg-alt);
+    position: relative;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  .tech-card {
+    padding: 32px 28px;
+    background: var(--color-bg-white);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tech-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: var(--transition);
+  }
+  .tech-card:hover .tech-icon-wrap {
+    background: var(--color-primary);
+    color: #ffffff;
+    transform: rotate(5deg);
+  }
+
+  .tech-category {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .tech-name {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 12px;
+  }
+
+  .tech-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .tech-highlight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    background: var(--color-primary-soft);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 18px;
+  }
+  .tech-highlight svg {
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .tech-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-bg-base);
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Safety Banner */
+  .safety-banner {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .safety-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--color-sage-soft);
+    color: var(--color-sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .safety-text {
+    flex-grow: 1;
+  }
+  .safety-text h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+  }
+  .safety-text p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+  .safety-btn {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 860px) {
+    .safety-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 24px;
+    }
+    .safety-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .tech-card {
+      padding: 24px 20px;
+    }
+  }
+</style>

@@ -1,0 +1,285 @@
+---
+import { siteConfig } from "../data/siteConfig";
+
+const pillars = [
+  {
+    title: "Diagnóstico Clínico Previo",
+    desc: "Cada piel y cuerpo es único. No aplicamos recetas universales; realizamos valoración profunda para elegir el protocolo adecuado.",
+    icon: "M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9l2 2 4-4"
+  },
+  {
+    title: "Aparatología Regulada",
+    desc: "Invertimos continuamente en equipos médicos originales aprobados por COFEPRIS y FDA con mantenimientos preventivos continuos.",
+    icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+  },
+  {
+    title: "Cabinas Privadas & Sanitizadas",
+    desc: "Espacios insonorizados, aromatizados con esencias puras y desinfectados bajo estrictos protocolos hospitalarios entre cada cita.",
+    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+  },
+  {
+    title: "Profesionales Titulados",
+    desc: "Nuestro personal médico, cosmetológico y terapéutico cuenta con certificaciones oficiales y actualización permanente en congresos estéticos.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+  }
+];
+---
+
+<section class="section-padding about-section" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Media y Composición de Imágenes -->
+      <div class="about-media">
+        <div class="about-img-main-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80"
+            alt="Interior de cabina de spa clínico"
+            class="about-img-main"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about-img-sub-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80"
+            alt="Aplicación de tratamiento facial"
+            class="about-img-sub"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Experiencia Badge -->
+        <div class="about-exp-badge">
+          <span class="exp-number">+12</span>
+          <span class="exp-text">Años de trayectoria clínica & confianza</span>
+        </div>
+      </div>
+
+      <!-- Contenido Textual -->
+      <div class="about-content">
+        <span class="section-tag">Nuestra Esencia</span>
+        <h2 class="section-title">Ciencia, Pasión y Cuidado para Resaltar tu Belleza Natural</h2>
+
+        <p class="about-paragraph">
+          Nuestra clínica nació con una misión clara: ofrecer tratamientos estéticos y dermatológicos con el rigor de la medicina moderna, en la atmósfera de serenidad y relajación de un spa de primer nivel.
+        </p>
+
+        <p class="about-paragraph">
+          Creemos que la belleza no debe forzarse ni alterar tus facciones; se trata de restaurar la salud de tu piel, regenerar el colágeno que el tiempo disminuye y brindarte una pausa reconfortante en tu rutina diaria.
+        </p>
+
+        <!-- Pilares -->
+        <div class="about-pillars">
+          {
+            pillars.map((pillar) => (
+              <div class="pillar-item">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d={pillar.icon} />
+                  </svg>
+                </div>
+                <div class="pillar-text">
+                  <h4>{pillar.title}</h4>
+                  <p>{pillar.desc}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="about-cta-row">
+          <a href="#contacto" class="btn btn-primary">
+            Conoce Nuestras Instalaciones
+          </a>
+          <a href={`tel:${siteConfig.phone}`} class="btn btn-secondary">
+            Llamar al {siteConfig.phoneDisplay}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background: var(--color-bg-base);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  /* Media */
+  .about-media {
+    position: relative;
+    padding-bottom: 60px;
+    padding-right: 40px;
+  }
+
+  .about-img-main-wrapper {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--color-border);
+  }
+  .about-img-main {
+    width: 100%;
+    height: clamp(260px, 50vw, 480px);
+    object-fit: cover;
+  }
+
+  .about-img-sub-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 240px;
+    height: 240px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 6px solid var(--color-bg-base);
+    box-shadow: var(--shadow-lg);
+  }
+  .about-img-sub {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-exp-badge {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 140px;
+    text-align: center;
+  }
+  .exp-number {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .exp-text {
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-top: 4px;
+    line-height: 1.2;
+    opacity: 0.95;
+  }
+
+  /* Contenido */
+  .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-paragraph {
+    font-size: 1.05rem;
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .about-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 28px 0 36px 0;
+  }
+
+  .pillar-item {
+    display: flex;
+    gap: 14px;
+  }
+
+  .pillar-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .pillar-text h4 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+  }
+  .pillar-text p {
+    font-size: 0.84rem;
+    color: var(--color-text-muted);
+    line-height: 1.45;
+  }
+
+  .about-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .about-media {
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .about-exp-badge {
+      left: 10px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-pillars {
+      grid-template-columns: 1fr;
+      margin: 20px 0 28px 0;
+    }
+    .about-img-sub-wrapper {
+      display: none;
+    }
+    .about-media {
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    .about-exp-badge {
+      left: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-cta-row {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .about-cta-row .btn {
+      width: 100%;
+    }
+    .about-exp-badge {
+      padding: 10px 14px;
+      top: 14px;
+      left: 10px;
+    }
+    .exp-number {
+      font-size: 1.75rem;
+    }
+  }
+</style>

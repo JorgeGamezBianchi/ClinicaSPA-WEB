@@ -1,0 +1,146 @@
+---
+import { testimonials } from "../data/testimonials";
+---
+
+<section class="section-padding testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag section-tag-gold">Voces Reales</span>
+      <h2 class="section-title">Lo que Dicen Nuestros Pacientes</h2>
+      <p class="section-subtitle">
+        La mayor satisfacción de nuestro equipo es ver la confianza y el bienestar renovado de cada persona que visita nuestras cabinas.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      {
+        testimonials.map((test) => (
+          <div class="testimonial-card card">
+            <div class="test-header">
+              <div class="stars-row">
+                {Array.from({ length: test.rating }).map(() => (
+                  <span>★</span>
+                ))}
+              </div>
+              <span class="test-date">{test.date}</span>
+            </div>
+
+            <p class="test-comment">"{test.comment}"</p>
+
+            <div class="test-user">
+              <div class="user-avatar">
+                {test.name.charAt(0)}
+              </div>
+              <div class="user-info">
+                <strong class="user-name">{test.name}</strong>
+                <span class="user-location">{test.location}</span>
+                <span class="user-treatment">Tratamiento: {test.treatment}</span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    background: var(--color-bg-alt);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 28px;
+  }
+
+  .testimonial-card {
+    padding: 32px 26px;
+    background: var(--color-bg-white);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .stars-row {
+    color: #e6a817;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .test-date {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  .test-comment {
+    font-size: 0.95rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .test-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .user-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-name {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+  }
+
+  .user-location {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .user-treatment {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-sage-dark);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .testimonial-card {
+      padding: 24px 20px;
+    }
+  }
+</style>

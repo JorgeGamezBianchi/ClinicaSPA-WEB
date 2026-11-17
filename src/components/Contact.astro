@@ -1,0 +1,792 @@
+---
+import { siteConfig } from "../data/siteConfig";
+import { services } from "../data/services";
+
+const whatsappLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappDefaultMessage)}`;
+
+const faciales = services.filter((s) => s.category === "faciales");
+const aparatologia = services.filter((s) => s.category === "aparatologia");
+const corporales = services.filter((s) => s.category === "corporales");
+const medicinaEstetica = services.filter((s) => s.category === "medicina-estetica");
+---
+
+<section class="section-padding contact-section" id="contacto">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag section-tag-gold">Estamos para Servirte</span>
+      <h2 class="section-title">Agenda tu Cita o Visítanos</h2>
+      <p class="section-subtitle">
+        Ponte en contacto con nuestro equipo de atención personalizada. Te asistiremos con gusto para resolver cualquier duda sobre tratamientos, costos y horarios disponibles.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Tarjeta de Información de Contacto -->
+      <div class="contact-info-panel card">
+        <h3 class="panel-title">Información de la Clínica</h3>
+        <p class="panel-desc">
+          Contamos con instalaciones de fácil acceso, estacionamiento cercano y un ambiente diseñado para tu máximo confort.
+        </p>
+
+        <div class="info-items-list">
+          <!-- Ubicación -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="info-content">
+              <strong>Ubicación</strong>
+              <p>{siteConfig.address.street}</p>
+              <p>{siteConfig.address.city}, {siteConfig.address.state}, {siteConfig.address.country}</p>
+              <a
+                href={siteConfig.address.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="info-link"
+              >
+                Abrir en Google Maps →
+              </a>
+            </div>
+          </div>
+
+          <!-- Teléfono y WhatsApp -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="info-content">
+              <strong>Teléfono & WhatsApp</strong>
+              <p>Llamadas: <a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a></p>
+              <p>WhatsApp: <a href={whatsappLink} target="_blank" rel="noopener noreferrer">{siteConfig.whatsappDisplay}</a></p>
+            </div>
+          </div>
+
+          <!-- Horario de Atención -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="info-content">
+              <strong>Horarios de Consulta</strong>
+              <p>{siteConfig.schedule.weekdays}</p>
+              <p>{siteConfig.schedule.saturday}</p>
+              <p>{siteConfig.schedule.sunday}</p>
+            </div>
+          </div>
+
+          <!-- Correo -->
+          <div class="info-item">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="info-content">
+              <strong>Correo Electrónico</strong>
+              <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón / Caja directa de WhatsApp (oculto según requerimiento) -->
+        <!--
+        <div class="direct-wa-box">
+          <h4>¿Deseas respuesta inmediata?</h4>
+          <p>Escríbenos directamente a WhatsApp y te atenderemos en tiempo real.</p>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+            Iniciar Chat de WhatsApp
+          </a>
+        </div>
+        -->
+      </div>
+
+      <!-- Formulario Interactivo de Cita -->
+      <div class="contact-form-panel card">
+        <div class="form-header-badge">
+          <span class="badge-dot-form"></span>
+          <span>Reserva rápida sin costo de apartado</span>
+        </div>
+        <h3 class="panel-title">Solicitar Cita de Valoración</h3>
+        <p class="panel-desc">
+          Ingresa tus datos a continuación. Recibirás respuesta personalizada inmediata con horarios y disponibilidad.
+        </p>
+
+        <!-- CAJA DE ÉXITO TRAS ENVIAR -->
+        <div class="form-success-box" id="form-success-box" style="display: none;">
+          <div class="success-icon-wrap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <div class="success-content">
+            <h4>¡Solicitud lista para enviar!</h4>
+            <p id="success-summary-text">Hemos preparado tu mensaje con los detalles de tu cita.</p>
+            <div class="success-actions">
+              <a href="#" id="success-wa-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Abrir Chat de WhatsApp
+              </a>
+              <button type="button" id="reset-form-btn" class="btn-link-reset">Modificar datos</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="appointment-form" id="booking-form" data-whatsapp={siteConfig.whatsapp}>
+          <!-- FILA 1: NOMBRE Y TELÉFONO -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                Nombre completo <span class="required-star">*</span>
+              </label>
+              <input
+                type="text"
+                id="form-name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="Ej. Ana Sofía Morales"
+                class="form-control"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-phone" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Teléfono / WhatsApp <span class="required-star">*</span>
+              </label>
+              <input
+                type="tel"
+                id="form-phone"
+                name="phone"
+                required
+                autocomplete="tel"
+                placeholder="Ej. 461 123 4567"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <!-- FILA 2: CORREO Y FECHA DESEADA -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-email" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Correo electrónico <span class="optional-badge">(opcional)</span>
+              </label>
+              <input
+                type="email"
+                id="form-email"
+                name="email"
+                autocomplete="email"
+                placeholder="ejemplo@correo.com"
+                class="form-control"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-date" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                Fecha preferida de cita <span class="optional-badge">(opcional)</span>
+              </label>
+              <input
+                type="date"
+                id="form-date"
+                name="date"
+                class="form-control form-control-date"
+              />
+            </div>
+          </div>
+
+          <!-- FILA 3: TRATAMIENTO Y HORARIO -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-treatment" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                Tratamiento o Servicio <span class="required-star">*</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="form-treatment" name="treatment" required class="form-control form-select">
+                  <option value="" disabled selected>Elige un tratamiento...</option>
+                  
+                  <optgroup label="Faciales Médicos">
+                    {faciales.map((svc) => (
+                      <option value={`${svc.name} (${svc.price})`}>{svc.name} - {svc.price}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="Aparatología Médica Avanzada">
+                    {aparatologia.map((svc) => (
+                      <option value={`${svc.name} (${svc.price})`}>{svc.name} - {svc.price}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="Corporales & Masajes">
+                    {corporales.map((svc) => (
+                      <option value={`${svc.name} (${svc.price})`}>{svc.name} - {svc.price}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="Medicina Estética">
+                    {medicinaEstetica.map((svc) => (
+                      <option value={`${svc.name} (${svc.price})`}>{svc.name} - {svc.price}</option>
+                    ))}
+                  </optgroup>
+
+                  <optgroup label="Otras Consultas">
+                    <option value="Consulta de Valoración General">Consulta de Valoración Médica General</option>
+                    <option value="Paquetes y Membresías Especiales">Paquetes y Promociones Especiales</option>
+                    <option value="Productos Dermatológicos">Productos Dermatológicos y Skincare</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-schedule" class="form-label">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                Preferencia de Horario
+              </label>
+              <div class="select-wrapper">
+                <select id="form-schedule" name="schedule" class="form-control form-select">
+                  <option value="Por la mañana (9:00 AM - 1:00 PM)">Por la mañana (9:00 AM - 1:00 PM)</option>
+                  <option value="Por la tarde (2:00 PM - 7:00 PM)">Por la tarde (2:00 PM - 7:00 PM)</option>
+                  <option value="Sábado por la mañana (10:00 AM - 2:00 PM)">Sábado por la mañana (10:00 AM - 2:00 PM)</option>
+                  <option value="Indiferente / Primer horario disponible">Cualquier horario disponible</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- FILA 4: COMENTARIOS ADICIONALES -->
+          <div class="form-group">
+            <label for="form-message" class="form-label">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              Mensaje o dudas específicas <span class="optional-badge">(opcional)</span>
+            </label>
+            <textarea
+              id="form-message"
+              name="message"
+              rows="3"
+              placeholder="Cuéntanos si tienes alguna inquietud sobre tu tipo de piel, alergias o si es tu primera vez en clínica..."
+              class="form-control form-textarea"
+            ></textarea>
+          </div>
+
+          <!-- AVISO DE PRIVACIDAD RÁPIDO -->
+          <div class="form-privacy-note">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>Tus datos son 100% confidenciales y se usarán únicamente para la gestión de tu cita.</span>
+          </div>
+
+          <!-- BOTÓN DE ENVÍO -->
+          <button type="submit" class="btn btn-primary form-submit-btn" id="submit-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            <span>Confirmar Cita por WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAPA EMBEBIDO -->
+    <div class="map-card card">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119532.74811090727!2d-100.91610444585141!3d20.526279148011234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cba9bc8429efd%3A0xb304bb08a15995e8!2sCelaya%2C%20Gto.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+        width="100%"
+        height="360"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de la Clínica"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: var(--color-bg-base);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 36px;
+    margin-bottom: 40px;
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 38px 36px;
+    background: #ffffff;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Badge superior en formulario */
+  .form-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-gold-bg);
+    border: 1px solid rgba(197, 155, 39, 0.25);
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #8c6a0c;
+    margin-bottom: 16px;
+  }
+  .badge-dot-form {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    box-shadow: 0 0 6px var(--color-gold);
+  }
+
+  .panel-title {
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+  }
+
+  .panel-desc {
+    font-size: 0.93rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 26px;
+  }
+
+  /* Lista de información de contacto */
+  .info-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+
+  .info-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-content strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    margin-bottom: 3px;
+  }
+
+  .info-content p {
+    font-size: 0.88rem;
+    color: var(--color-text-body);
+    line-height: 1.45;
+  }
+
+  .info-content a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  .info-content a:hover {
+    text-decoration: underline;
+  }
+
+  .info-link {
+    display: inline-block;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-top: 4px;
+  }
+  .info-link:hover {
+    color: #8c6a0c;
+  }
+
+  .direct-wa-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .direct-wa-box h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #166534;
+  }
+  .direct-wa-box p {
+    font-size: 0.85rem;
+    color: #15803d;
+    line-height: 1.4;
+  }
+
+  /* Formulario y Campos */
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+
+  .form-label svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .required-star {
+    color: #c53030;
+    font-weight: 700;
+  }
+
+  .optional-badge {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+  }
+
+  /* Control base de inputs (16px / 1rem previene auto-zoom molesto en iOS Safari) */
+  .form-control {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid #dfd7cc;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(31, 36, 33, 0.04);
+    transition: var(--transition);
+  }
+
+  .form-control::placeholder {
+    color: #9ba8a0;
+    font-size: 0.9rem;
+  }
+
+  .form-control:hover {
+    border-color: #baa895;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3.5px rgba(141, 91, 76, 0.15);
+  }
+
+  /* Selector con flecha estilizada */
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 38px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238d5b4c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+
+  .form-control-date {
+    cursor: pointer;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 95px;
+    line-height: 1.5;
+  }
+
+  /* Nota de privacidad */
+  .form-privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    padding: 2px 0;
+  }
+  .form-privacy-note svg {
+    color: var(--color-sage);
+    flex-shrink: 0;
+  }
+
+  /* Botón de envío */
+  .form-submit-btn {
+    width: 100%;
+    padding: 15px 24px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    margin-top: 4px;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  /* Cuadro de confirmación tras envío */
+  .form-success-box {
+    display: flex;
+    gap: 16px;
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .success-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .success-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #14532d;
+    margin-bottom: 4px;
+  }
+
+  .success-content p {
+    font-size: 0.88rem;
+    color: #15803d;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .success-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-link-reset {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #166534;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .btn-link-reset:hover {
+    color: #052e16;
+  }
+
+  /* Mapa */
+  .map-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: clamp(240px, 50vw, 360px);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .contact-info-panel,
+    .contact-form-panel {
+      padding: 28px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-info-panel,
+    .contact-form-panel {
+      padding: 22px 16px;
+    }
+    .panel-title {
+      font-size: 1.55rem;
+    }
+    .info-item {
+      gap: 12px;
+    }
+    .info-icon {
+      width: 38px;
+      height: 38px;
+    }
+    .success-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .success-actions .btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Enviar formulario redirigiendo a WhatsApp con todos los campos organizados
+  const bookingForm = document.getElementById("booking-form") as HTMLFormElement;
+  const successBox = document.getElementById("form-success-box") as HTMLDivElement;
+  const successText = document.getElementById("success-summary-text") as HTMLParagraphElement;
+  const successWaBtn = document.getElementById("success-wa-btn") as HTMLAnchorElement;
+  const resetBtn = document.getElementById("reset-form-btn") as HTMLButtonElement;
+  const dateInput = document.getElementById("form-date") as HTMLInputElement;
+
+  // Establecer fecha mínima en el selector como el día de hoy
+  if (dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.min = today;
+  }
+
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const whatsapp = bookingForm.getAttribute("data-whatsapp") || "525610853383";
+      const name = (document.getElementById("form-name") as HTMLInputElement).value.trim();
+      const phone = (document.getElementById("form-phone") as HTMLInputElement).value.trim();
+      const email = (document.getElementById("form-email") as HTMLInputElement).value.trim();
+      const date = (document.getElementById("form-date") as HTMLInputElement).value;
+      const treatment = (document.getElementById("form-treatment") as HTMLSelectElement).value;
+      const schedule = (document.getElementById("form-schedule") as HTMLSelectElement).value;
+      const message = (document.getElementById("form-message") as HTMLTextAreaElement).value.trim();
+
+      // Construcción del mensaje formateado y profesional para WhatsApp
+      let waText = `¡Hola Clínica Crisalis! Deseo solicitar una cita de valoración médica:\n\n` +
+        `👤 *Nombre:* ${name}\n` +
+        `📱 *Teléfono:* ${phone}\n`;
+
+      if (email) {
+        waText += `✉️ *Correo:* ${email}\n`;
+      }
+
+      waText += `✨ *Tratamiento de interés:* ${treatment}\n`;
+
+      if (date) {
+        waText += `📅 *Fecha sugerida:* ${date}\n`;
+      }
+
+      waText += `⏰ *Preferencia de horario:* ${schedule}\n`;
+
+      if (message) {
+        waText += `💬 *Comentarios/Dudas:* ${message}\n`;
+      }
+
+      waText += `\n¿Me podrían confirmar si tienen disponibilidad? Muchas gracias.`;
+
+      const targetUrl = `https://wa.me/${whatsapp}?text=${encodeURIComponent(waText)}`;
+
+      // Mostrar caja de éxito visual en el formulario
+      if (successBox && successText && successWaBtn) {
+        successText.innerHTML = `Listo <strong>${name}</strong>, tu solicitud para <em>${treatment}</em> ha sido preparada. Si no se abrió WhatsApp automáticamente, pulsa el botón verde:`;
+        successWaBtn.href = targetUrl;
+        successBox.style.display = "flex";
+        successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      // Abrir WhatsApp en pestaña nueva o app
+      window.open(targetUrl, "_blank");
+    });
+  }
+
+  if (resetBtn && bookingForm && successBox) {
+    resetBtn.addEventListener("click", () => {
+      successBox.style.display = "none";
+      const nameInput = document.getElementById("form-name") as HTMLInputElement;
+      if (nameInput) nameInput.focus();
+    });
+  }
+</script>

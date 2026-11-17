@@ -1,0 +1,460 @@
+---
+import { siteConfig } from "../data/siteConfig";
+
+const whatsappLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappDefaultMessage)}`;
+---
+
+<!-- TOP BAR INFORMATIVA -->
+<div class="topbar">
+  <div class="container topbar-container">
+    <div class="topbar-info">
+      <span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+        {siteConfig.schedule.weekdays}
+      </span>
+      <span class="topbar-separator">•</span>
+      <span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        {siteConfig.address.street}, {siteConfig.address.city}
+      </span>
+    </div>
+    <div class="topbar-actions">
+      <a href={`tel:${siteConfig.phone}`} class="topbar-link">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        {siteConfig.phoneDisplay}
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR PRINCIPAL -->
+<header class="navbar" id="navbar">
+  <div class="container nav-container">
+    <!-- LOGO GENÉRICO DE SPA / FLOR DE LOTO -->
+    <a href="#inicio" class="nav-logo" aria-label="Ir al inicio">
+      <div class="logo-icon-wrap">
+        <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="23" stroke="#8d5b4c" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.4" />
+          <!-- Pétalo central -->
+          <path d="M24 8 C20 18 16 26 16 33 C16 39.5 19.5 42 24 42 C28.5 42 32 39.5 32 33 C32 26 28 18 24 8 Z" fill="#8d5b4c" />
+          <!-- Pétalo lateral izquierdo -->
+          <path d="M22 20 C16 23 10 29 10 35 C10 39 13 41 17 41 C21 41 23 37 23 33 Z" fill="#c59b27" opacity="0.85" />
+          <!-- Pétalo lateral derecho -->
+          <path d="M26 20 C32 23 38 29 38 35 C38 39 35 41 31 41 C27 41 25 37 25 33 Z" fill="#c59b27" opacity="0.85" />
+        </svg>
+      </div>
+      <div class="logo-brand">
+        <span class="logo-name">{siteConfig.shortName}</span>
+        <span class="logo-type">CLÍNICA & BIENESTAR</span>
+      </div>
+    </a>
+
+    <!-- MENÚ DE NAVEGACIÓN DESKTOP & MÓVIL -->
+    <nav class="nav-links" id="nav-menu">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#tecnologia" class="nav-link">Aparatología</a>
+      <a href="#paquetes" class="nav-link">Paquetes</a>
+      <a href="#productos" class="nav-link">Productos</a>
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#preguntas" class="nav-link">FAQ</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm nav-mobile-cta">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Agendar Cita por WhatsApp
+      </a>
+    </nav>
+
+    <!-- ACCIONES DE NAVEGACIÓN -->
+    <div class="nav-cta-wrapper">
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-nav-cta">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Agendar Cita
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA MÓVIL -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Topbar */
+  .topbar {
+    background: var(--color-text-dark);
+    color: #e5ece8;
+    font-size: 0.82rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .topbar-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .topbar-separator {
+    opacity: 0.4;
+  }
+  .topbar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-gold-light);
+    font-weight: 500;
+  }
+  .topbar-link:hover {
+    color: #ffffff;
+  }
+
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+  }
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-sm);
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 78px;
+  }
+
+  /* Brand Logo */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  .logo-icon-wrap {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-svg {
+    width: 100%;
+    height: 100%;
+  }
+  .logo-brand {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .logo-name {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 4vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-text-dark);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .logo-type {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+
+  /* Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-link {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--color-text-body);
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: var(--radius-pill);
+    transition: var(--transition);
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-primary);
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-cta-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Mobile toggle */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    padding: 0;
+  }
+  .mobile-toggle span {
+    width: 100%;
+    height: 2px;
+    background: var(--color-text-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .nav-mobile-cta {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .nav-links {
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .topbar {
+      display: none;
+    }
+    .mobile-toggle {
+      display: flex;
+    }
+    .btn-nav-cta {
+      display: none;
+    }
+    .nav-mobile-cta {
+      display: inline-flex;
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+    }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-bg-white);
+      border-bottom: 1px solid var(--color-border);
+      flex-direction: column;
+      padding: 24px;
+      gap: 16px;
+      max-height: calc(100vh - 78px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    .nav-link {
+      padding: 8px 0;
+      font-size: 1.05rem;
+      width: 100%;
+    }
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script>
+  // Script interactivo para navegación, menú móvil y scroll exacto por sección
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const navbar = document.getElementById("navbar");
+  const navLinks = document.querySelectorAll("#nav-menu .nav-link");
+
+  function getNavbarHeight(): number {
+    return navbar ? navbar.offsetHeight : 79;
+  }
+
+  function setActiveLink(targetId: string): void {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const isActive = href === `#${targetId}`;
+      link.classList.toggle("active", isActive);
+    });
+  }
+
+  function scrollToSection(targetId: string): void {
+    if (!targetId || targetId === "inicio") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      setActiveLink("inicio");
+      if (history.pushState) {
+        history.pushState(null, "", "#inicio");
+      }
+      return;
+    }
+
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    const navHeight = getNavbarHeight();
+    const elementTop = targetEl.getBoundingClientRect().top + window.scrollY;
+    const targetScrollY = Math.max(0, Math.round(elementTop - navHeight));
+
+    window.scrollTo({
+      top: targetScrollY,
+      behavior: "smooth"
+    });
+
+    setActiveLink(targetId);
+    if (history.pushState) {
+      history.pushState(null, "", `#${targetId}`);
+    }
+  }
+
+  // Control del menú móvil
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      mobileToggle.classList.toggle("active", isOpen);
+      mobileToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  // Interceptar clicks en todos los enlaces ancla de la página
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      // Si existe el elemento o es inicio, manejamos el scroll de precisión
+      if (targetElement || targetId === "inicio") {
+        e.preventDefault();
+
+        // Si el menú móvil está desplegado, cerrarlo suavemente
+        if (navMenu && navMenu.classList.contains("open")) {
+          navMenu.classList.remove("open");
+          if (mobileToggle) {
+            mobileToggle.classList.remove("active");
+            mobileToggle.setAttribute("aria-expanded", "false");
+          }
+        }
+
+        scrollToSection(targetId);
+      }
+    });
+  });
+
+  // ScrollSpy: sincronizar enlace activo y sombra del navbar según posición
+  const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+
+  function onScroll(): void {
+    const scrollY = window.scrollY;
+    const navHeight = getNavbarHeight();
+
+    // Sombra en navbar
+    if (navbar) {
+      if (scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+
+    // Si estamos en la parte superior, activar "inicio"
+    if (scrollY < 100) {
+      setActiveLink("inicio");
+      return;
+    }
+
+    // Detectar qué sección está visible en la parte superior
+    let currentId = "";
+    for (const section of sections) {
+      const sectionTop = section.offsetTop - navHeight - 15;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionBottom) {
+        currentId = section.getAttribute("id") || "";
+        break;
+      }
+    }
+
+    if (currentId) {
+      setActiveLink(currentId);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Manejar carga inicial con hash en la URL
+  window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash) {
+      const initialId = window.location.hash.substring(1);
+      setTimeout(() => {
+        scrollToSection(initialId);
+      }, 150);
+    }
+  });
+</script>

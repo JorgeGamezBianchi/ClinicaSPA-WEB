@@ -1,0 +1,45 @@
+---
+import { siteConfig } from "../data/siteConfig";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${siteConfig.shortName} | ${siteConfig.tagline}`,
+  description = siteConfig.description,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="spa clínico, medicina estética, tratamientos faciales, depilación láser, hidrofacial, scarlet s, masajes reductivos, celaya, aparatología corporal" />
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Fuentes de Google: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon SVG genérico para Spa / Loto -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%238d5b4c'/><path d='M50 20 C40 38 30 50 30 65 C30 76 39 82 50 82 C61 82 70 76 70 65 C70 50 60 38 50 20 Z' fill='%23ffffff' opacity='0.9'/><path d='M50 35 C58 48 64 58 64 68 C64 76 58 80 50 80 C42 80 36 76 36 68 C36 58 42 48 50 35 Z' fill='%23c59b27'/></svg>" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

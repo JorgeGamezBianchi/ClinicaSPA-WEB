@@ -1,0 +1,321 @@
+/* =========================================================================
+   AURA SPA CLÍNICO - ESTILOS GLOBALES & PLANTILLA
+   ========================================================================= */
+
+/* ---- RESET & BOX SIZING ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Paleta de Colores Spa & Bienestar de Lujo */
+  --color-primary: #8d5b4c; /* Terracota refinado / Arcilla spa */
+  --color-primary-dark: #6e4133;
+  --color-primary-light: #b07d6f;
+  --color-primary-soft: #f8ece8;
+
+  --color-gold: #c59b27; /* Dorado champaña / Oro suave */
+  --color-gold-light: #dfba4d;
+  --color-gold-bg: #faf6ea;
+
+  --color-sage: #52796f; /* Eucalipto / Salvia curativa */
+  --color-sage-dark: #354f52;
+  --color-sage-soft: #eaf1ee;
+
+  --color-text-dark: #1f2421; /* Carbón elegante */
+  --color-text-body: #3c4842; /* Texto de lectura */
+  --color-text-muted: #6e7d75; /* Texto secundario */
+  --color-text-light: #9ba8a0;
+
+  --color-bg-base: #fdfbf7; /* Crema suave / Lino */
+  --color-bg-white: #ffffff;
+  --color-bg-alt: #f6f1e8; /* Arena cálida */
+  --color-bg-card: #ffffff;
+  --color-border: #ede4d8;
+  --color-border-hover: #d8c8b6;
+
+  /* Sombras y Elevaciones */
+  --shadow-sm:
+    0 2px 8px rgba(31, 36, 33, 0.04), 0 1px 3px rgba(31, 36, 33, 0.02);
+  --shadow-md:
+    0 6px 20px rgba(31, 36, 33, 0.06), 0 2px 6px rgba(31, 36, 33, 0.03);
+  --shadow-lg:
+    0 14px 40px rgba(31, 36, 33, 0.08), 0 4px 12px rgba(31, 36, 33, 0.04);
+  --shadow-xl:
+    0 24px 60px rgba(31, 36, 33, 0.12), 0 8px 24px rgba(31, 36, 33, 0.06);
+
+  /* Radios de borde */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Tipografías */
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  /* Transición */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 79px;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 79px;
+}
+
+#inicio {
+  scroll-margin-top: 160px;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Selección */
+::selection {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---- CONTENEDOR COMÚN ---- */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 24px);
+}
+
+/* ---- ENCABEZADOS DE SECCIÓN ---- */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px auto;
+  padding: 0 4px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.section-tag-gold {
+  color: #8c6a0c;
+  background: var(--color-gold-bg);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-text-dark);
+  margin-bottom: 16px;
+  overflow-wrap: break-word;
+}
+
+.section-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---- BOTONES PRINCIPALES ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  text-align: center;
+  max-width: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(141, 91, 76, 0.28);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(141, 91, 76, 0.38);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: var(--color-bg-white);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.28);
+}
+.btn-whatsapp:hover {
+  background: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  color: #ffffff;
+}
+
+.btn-outline {
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+/* Badges */
+.badge-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gold-bg);
+  color: #8c6a0c;
+  border: 1px solid rgba(197, 155, 39, 0.2);
+}
+
+/* Tarjetas base */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Espaciado de sección */
+.section-padding {
+  padding: 25px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 44px 0;
+  }
+  .section-header {
+    margin-bottom: 32px;
+  }
+  .section-tag {
+    font-size: 0.74rem;
+    letter-spacing: 1.2px;
+    padding: 5px 12px;
+  }
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}

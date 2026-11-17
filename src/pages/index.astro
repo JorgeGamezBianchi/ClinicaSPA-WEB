@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import TechShowcase from "../components/TechShowcase.astro";
+import Packages from "../components/Packages.astro";
+import Products from "../components/Products.astro";
+import About from "../components/About.astro";
+import Testimonials from "../components/Testimonials.astro";
+import FAQ from "../components/FAQ.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import { siteConfig } from "../data/siteConfig";
+---
+
+<Layout
+  title={`${siteConfig.name} | ${siteConfig.tagline}`}
+  description={siteConfig.description}
+>
+  <!-- Barra de Navegación con Menú Móvil -->
+  <Navbar />
+
+  <!-- Sección Hero con Llamados a la Acción y Estadísticas -->
+  <Hero />
+
+  <!-- Catálogo Interactivo de Servicios con Filtros de Categoría -->
+  <Services />
+
+  <!-- Vitrina de Aparatología y Seguridad Médica (Scarlet S, V10 Viora, Láser) -->
+  <TechShowcase />
+
+  <!-- Paquetes Especiales y Promociones con Precios Transparentes -->
+  <Packages />
+
+  <!-- Farmacia Dermatológica / Productos Cosméticos para Cuidado en Casa -->
+  <Products />
+
+  <!-- Filosofía de la Clínica, Cabinas Privadas y Aval de Especialistas -->
+  <About />
+
+  <!-- Reseñas y Testimonios de Pacientes Reales -->
+  <Testimonials />
+
+  <!-- Acordeón de Preguntas Frecuentes -->
+  <FAQ />
+
+  <!-- Formulario de Cita, Datos de Contacto y Mapa Interactivo -->
+  <Contact />
+
+  <!-- Pie de Página Completo con Enlaces y Redes Sociales -->
+  <Footer />
+
+  <!-- Botón Flotante Permanente de WhatsApp con Mensaje Preconfigurado -->
+  <WhatsAppButton />
+</Layout>
