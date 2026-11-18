@@ -735,7 +735,7 @@ const medicinaEstetica = services.filter((s) => s.category === "medicina-estetic
   if (bookingForm) {
     bookingForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const whatsapp = bookingForm.getAttribute("data-whatsapp") || "525610853383";
+      const whatsapp = bookingForm.getAttribute("data-whatsapp") || "525500000000";
       const name = (document.getElementById("form-name") as HTMLInputElement).value.trim();
       const phone = (document.getElementById("form-phone") as HTMLInputElement).value.trim();
       const email = (document.getElementById("form-email") as HTMLInputElement).value.trim();
@@ -745,7 +745,7 @@ const medicinaEstetica = services.filter((s) => s.category === "medicina-estetic
       const message = (document.getElementById("form-message") as HTMLTextAreaElement).value.trim();
 
       // Construcción del mensaje formateado y profesional para WhatsApp
-      let waText = `¡Hola Clínica Crisalis! Deseo solicitar una cita de valoración médica:\n\n` +
+      let waText = `¡Hola Clínica Spa! Deseo solicitar una cita de valoración médica:\n\n` +
         `👤 *Nombre:* ${name}\n` +
         `📱 *Teléfono:* ${phone}\n`;
 

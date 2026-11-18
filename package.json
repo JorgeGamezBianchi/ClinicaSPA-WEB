@@ -1,5 +1,5 @@
 {
-  "name": "crissalis-spa-web",
+  "name": "clinica-spa-web",
   "type": "module",
   "version": "1.0.0",
   "description": "Sitio web estático en Astro para clínica de spa médico, bienestar y dermatología estética",

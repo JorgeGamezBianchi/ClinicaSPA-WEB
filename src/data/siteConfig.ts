@@ -45,10 +45,10 @@ export const siteConfig: SiteConfig = {
   shortName: "AURA SPA",
   tagline: "Medicina Estética, Alta Tecnología y Bienestar Integral",
   description: "Clínica especializada en tratamientos dermatológicos, faciales clínicos, aparatología de última generación, masajes terapéuticos y medicina estética en un ambiente de confort y exclusividad.",
-  phone: "+525610853383",
-  phoneDisplay: "(56) 1085-3383",
-  whatsapp: "525610853383", // Número de WhatsApp internacional sin símbolos
-  whatsappDisplay: "+52 56 1085 3383",
+  phone: "+525500000000",
+  phoneDisplay: "(55) 0000-0000",
+  whatsapp: "525500000000", // Número de WhatsApp internacional sin símbolos
+  whatsappDisplay: "+52 55 0000 0000",
   whatsappDefaultMessage: "¡Hola! Me gustaría solicitar información sobre sus tratamientos y agendar una cita de valoración.",
   email: "contacto@auraspaclinico.com",
   address: {
@@ -67,7 +67,7 @@ export const siteConfig: SiteConfig = {
   social: {
     facebook: "https://www.facebook.com/crisalisspa/?locale=es_LA",
     instagram: "https://instagram.com/crisalisspa",
-    whatsapp: "https://wa.me/525610853383",
+    whatsapp: "https://wa.me/525500000000",
     tiktok: "https://tiktok.com"
   },
   stats: [

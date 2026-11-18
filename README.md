@@ -2,7 +2,7 @@
 
 Sitio web estático moderno, ultra rápido y responsivo desarrollado con **[Astro](https://astro.build)**. Diseñado específicamente para clínicas dermatológicas, spas médicos y centros de bienestar estético.
 
-Inspirado en la estructura de servicios, tecnología y productos de **Crisalis Spa**, con una arquitectura 100% modular y configurable para ser utilizado como plantilla genérica para cualquier cliente o proyecto futuro.
+Diseñado con la estructura de servicios, tecnología y productos de una clínica de spa y medicina estética integral, con una arquitectura 100% modular y configurable para ser utilizado como plantilla genérica para cualquier cliente o proyecto futuro.
 
 ---
 
@@ -26,7 +26,7 @@ Inspirado en la estructura de servicios, tecnología y productos de **Crisalis S
 ## 📁 Estructura del Proyecto
 
 ```text
-CrissalisSPA-WEB/
+ClinicaSPA-WEB/
 ├── public/                     # Archivos estáticos e imágenes
 ├── src/
 │   ├── components/             # Componentes Astro reutilizables
@@ -64,19 +64,19 @@ CrissalisSPA-WEB/
 ## 🛠️ Cómo Personalizar la Plantilla
 
 ### 1. Datos Generales y Marca
-Edita el archivo [src/data/siteConfig.ts](file:///C:/1.BoolDev/3.Projects/CrissalisSPA-WEB/src/data/siteConfig.ts):
+Edita el archivo [src/data/siteConfig.ts](file:///C:/1.BoolDev/3.Projects/ClinicaSPA-WEB/src/data/siteConfig.ts):
 - `name`: Nombre completo de la clínica.
 - `shortName`: Nombre abreviado para el logotipo.
 - `phone` y `phoneDisplay`: Teléfono de atención.
-- `whatsapp`: Número con lada internacional (ej. `524615141157`).
+- `whatsapp`: Número con lada internacional (ej. `525500000000`).
 - `address`: Dirección física y enlace de Google Maps.
 - `schedule`: Horarios de apertura.
 
 ### 2. Modificar Servicios y Precios
-Edita [src/data/services.ts](file:///C:/1.BoolDev/3.Projects/CrissalisSPA-WEB/src/data/services.ts). Puedes agregar, editar o quitar tratamientos con sus beneficios, duración y fotos.
+Edita [src/data/services.ts](file:///C:/1.BoolDev/3.Projects/ClinicaSPA-WEB/src/data/services.ts). Puedes agregar, editar o quitar tratamientos con sus beneficios, duración y fotos.
 
 ### 3. Modificar Productos de Farmacia
-Edita [src/data/products.ts](file:///C:/1.BoolDev/3.Projects/CrissalisSPA-WEB/src/data/products.ts).
+Edita [src/data/products.ts](file:///C:/1.BoolDev/3.Projects/ClinicaSPA-WEB/src/data/products.ts).
 
 ---
 
